@@ -2,7 +2,7 @@
 // SINGLE SUPABASE INITIALIZATION - SAFE METHOD
 // ============================================
 
-// Create a namespace for our app to avoid conflicts
+// Create a namespace  for our app to avoid conflicts
 window.NCHSMLogin = {
     // State Management
     state: {
