@@ -1,5 +1,5 @@
 // js/app.js - Fixed Version
-class App {
+class App { 
     constructor() {
         this.supabase = null;
         this.currentUserId = null;
