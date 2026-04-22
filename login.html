@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NCHSM Digital Portal - Login</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/NCHSMlearning/e-learning/main/images/Logo_NCHSM.png">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="login-styles.css">
+    
+    <!-- Only load Feather Icons in head -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    <style>
+        /* Additional inline styles to ensure the image is properly displayed */
+        .left-panel {
+            background: linear-gradient(135deg, rgba(2, 48, 32, 0.88), rgba(1, 33, 22, 0.85)), 
+                        url('https://nakurucollegeofhealth.ac.ke/wp-content/uploads/2026/02/IMG_20251219_080858_996-rotated.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+        }
+        
+        /* Ensure responsive behavior */
+        @media (max-width: 768px) {
+            .left-panel {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to content link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <div class="container">
+        <!-- Left Panel for Desktop with NEW IMAGE -->
+        <div class="left-panel">
+            <div class="panel-content">
+                <div class="logo-wrapper">
+                    <div class="logo">
+                        <img src="https://raw.githubusercontent.com/NCHSMlearning/e-learning/main/images/Logo_NCHSM.png" 
+                             alt="NCHSM Logo" 
+                             loading="eager">
+                    </div>
+                    <h1 class="college-name">NAKURU COLLEGE OF HEALTH SCIENCES AND MANAGEMENT</h1>
+                </div>
+                
+                <div class="welcome-section">
+                    <h2>Welcome to NCHSM Digital Portal</h2>
+                    <p class="tagline">Your gateway to excellence in healthcare education</p>
+                    
+                    <div class="features-list">
+                        <div class="feature">
+                            <i data-feather="book-open"></i>
+                            <div>
+                                <h3>Digital Learning</h3>
+                                <p>Access course materials, lectures, and resources</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i data-feather="clipboard"></i>
+                            <div>
+                                <h3>Progress Tracking</h3>
+                                <p>Monitor your academic progress and achievements</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i data-feather="users"></i>
+                            <div>
+                                <h3>Collaboration</h3>
+                                <p>Connect with peers and instructors</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i data-feather="shield"></i>
+                            <div>
+                                <h3>Secure Access</h3>
+                                <p>Enterprise-grade security for your data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <span class="number">2,500+</span>
+                        <span class="label">Students</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">150+</span>
+                        <span class="label">Faculty</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">98%</span>
+                        <span class="label">Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel / Main Content -->
+        <div class="right-panel">
+            <!-- Mobile Header -->
+            <header class="mobile-header">
+                <div class="header-content">
+                    <div class="logo">
+                        <img src="https://raw.githubusercontent.com/NCHSMlearning/e-learning/main/images/Logo_NCHSM.png" 
+                             alt="NCHSM Logo" 
+                             loading="eager">
+                    </div>
+                    <div class="college-info">
+                        <h1 class="college-name">NCHSM</h1>
+                        <p class="college-tagline">Digital Learning Portal</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main id="main-content" class="main-content">
+                <div class="login-card">
+                    <div class="welcome-section">
+                        <div class="welcome-icon">
+                            <i data-feather="lock"></i>
+                        </div>
+                        <h2 class="welcome-title">Welcome Back</h2>
+                        <p class="welcome-subtitle">Sign in to access your digital learning portal</p>
+                    </div>
+                    
+                    <div id="errorMsg" class="error-message" role="alert" aria-live="assertive">
+                        <i data-feather="alert-circle" class="error-icon"></i>
+                        <span class="error-text"></span>
+                    </div>
+                    
+                    <form id="loginForm" class="login-form" novalidate>
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i data-feather="mail" width="16" height="16"></i>
+                                Email Address
+                            </label>
+                            <div class="input-wrapper">
+                                <i data-feather="mail" class="input-icon"></i>
+                                <input type="email" 
+                                       id="email" 
+                                       class="form-input" 
+                                       placeholder="student@nchsm.ac.ke" 
+                                       required
+                                       autocomplete="email"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <small id="emailHelp" class="sr-only">Enter your college email address</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password" class="form-label">
+                                <i data-feather="lock" width="16" height="16"></i>
+                                Password
+                            </label>
+                            <div class="input-wrapper">
+                                <i data-feather="lock" class="input-icon"></i>
+                                <input type="password" 
+                                       id="password" 
+                                       class="form-input" 
+                                       placeholder="Enter your password" 
+                                       required
+                                       autocomplete="current-password"
+                                       aria-describedby="passwordHelp">
+                                <button type="button" 
+                                        id="password-toggle-btn" 
+                                        class="password-toggle"
+                                        aria-label="Toggle password visibility">
+                                    <i data-feather="eye-off" id="toggle-icon"></i>
+                                </button>
+                            </div>
+                            <small id="passwordHelp" class="sr-only">Enter your password</small>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" 
+                                           id="rememberMe" 
+                                           class="remember-checkbox"
+                                           aria-label="Remember me on this device">
+                                    <span class="checkbox-custom"></span>
+                                </div>
+                                <span class="remember-label">Remember me</span>
+                            </label>
+                            <a href="forgot-password.html" 
+                               class="forgot-link"
+                               aria-label="Forgot password?">
+                                Forgot Password?
+                            </a>
+                        </div>
+                        
+                        <button type="submit" 
+                                id="loginButton" 
+                                class="login-button"
+                                aria-live="polite">
+                            <span id="button-text">Sign In</span>
+                        </button>
+                    </form>
+                    
+                    <div class="divider">
+                        <span>Don't have an account?</span>
+                    </div>
+                    
+                    <div class="signup-section">
+                        <a href="register.html" class="signup-link">
+                            <i data-feather="user-plus"></i>
+                            Create New Account
+                        </a>
+                    </div>
+                    
+                    <div class="quick-links">
+                        <a href="help.html" class="quick-link">
+                            <i data-feather="help-circle"></i>
+                            Need Help?
+                        </a>
+                        <a href="contact.html" class="quick-link">
+                            <i data-feather="phone"></i>
+                            Contact Support
+                        </a>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p class="copyright">© 2025 Nakuru College of Health Sciences and Management</p>
+                    <div class="footer-links">
+                        <a href="privacy.html" class="footer-link">Privacy</a>
+                        <a href="terms.html" class="footer-link">Terms</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="support.html" class="footer-link">Support</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Load scripts at the END (EXACTLY as original) -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="login-script.js"></script>
+    
+    <script>
+        // Hides the .html extension in the URL
+        if (window.location.pathname.endsWith('.html')) {
+            const cleanPath = window.location.pathname.replace(/\.html$/, '');
+            window.history.replaceState({}, '', cleanPath);
+        }
+        
+        // Initialize Feather Icons
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+    </script>
+</body>
+</html>
